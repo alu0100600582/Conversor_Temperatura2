@@ -1,0 +1,27 @@
+{
+  "name": "Conversor_Temperatura",
+  "version": "1.0.0",
+  "description": "Práctica Conversor de Temperatura",
+  "main": "temperature.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "gulp": "*",
+    "gulp-concat": "^2.6.0",
+    "gulp-util": "^3.0.6",
+    "mocha": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100600582/Conversor_Temperatura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100600582/Conversor_Temperatura/issues"
+  },
+  "homepage": "https://github.com/alu0100600582/Conversor_Temperatura#readme"
+}
