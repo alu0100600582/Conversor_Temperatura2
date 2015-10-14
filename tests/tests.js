@@ -14,4 +14,49 @@ describe("Test BDD para el Conversor de Temperatura", function() {
       expect(temp.get_exp()).to.equal(-2);
       expect(temp.get_tipo()).to.equal("C");
     });
+
+    it("Debería ser: 3.2e4F", function() {
+      var temp = new Temperatura(0,0,"C");
+      temp.set_valor(3.2);
+      temp.set_exp(4);
+      temp.set_tipo("F");
+      expect(temp.get_valor()).to.equal(3.2);
+      expect(temp.get_exp()).to.equal(4);
+      expect(temp.get_tipo()).to.equal("F");
+    });
+
+
+
+
+    /*it("3.2e-2 === 0.032", function() {
+      var temp = new Temperatura(3.2,-2,"C");
+      temp.set_valor(parseFloat(temp.get_valor()));
+      temp.calculo_numero();
+      expect(temp.get_valor()).to.equal(0.032);
+    });
+*/
+    it("3.2e2 === 320", function() {
+      var temp = new Temperatura(3.2,2,"C");
+      temp.set_valor(parseFloat(temp.get_valor()));
+      temp.calculo_numero();
+      expect(temp.get_valor()).to.equal(320);
+    });
+
+    it("0.032C === 32.0576F", function() {
+      var temp = new Temperatura();
+      temp.set_valor(0.032);
+      temp.set_exp(0);
+      temp.set_tipo("C");
+      var result = temp.get_valor();
+      expect(result).to.equal(32.0576);
+    });
+
+/*    it("32.0576F === 0.032C", function() {
+      var temp = new Temperatura();
+      temp.set_valor(32.0576);
+      temp.set_exp(0);
+      temp.set_tipo("F");
+      var result = temp.to_c();
+      expect(res).to.equal(0.032000000000000424);
+    });  */
 });

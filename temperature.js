@@ -22,20 +22,7 @@ function Temperatura (valor, exp, tipo) {
 //Herencia
 Temperatura.prototype = new Medida();
 
-
-
-function calculate(){
-  var result;
-  var ini_temp = document.getElementsByName("ini_temp")[0].value;
-  var exp_regular = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([fFcC])/;
-
-  // comprobamos que el valor introducido haga match con la expresion regular
-  var valor = ini_temp.match(exp_regular);
-
-  var temp = new Temperatura(valor[1],valor[2],valor[3]);
-  if(temp != null){
-
-    temp.set_valor(parseFloat(temp.get_valor()));
+Temperatura.prototype.calculo_numero = function(){
 
     if (temp.get_exp() !== undefined){
       temp.set_exp(parseInt(temp.get_exp()));
@@ -65,6 +52,24 @@ function calculate(){
         if(div !== 0) temp.set_valor(temp.get_valor()*div);
       }
     }
+  }
+
+
+
+
+
+function calculate(){
+  var result;
+  var ini_temp = document.getElementsByName("ini_temp")[0].value;
+  var exp_regular = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([fFcC])/;
+
+  // comprobamos que el valor introducido haga match con la expresion regular
+  var valor = ini_temp.match(exp_regular);
+
+  var temp = new Temperatura(valor[1],valor[2],valor[3]);
+  if(temp != null){
+
+    temp.set_valor(parseFloat(temp.get_valor()));
 
     if(temp.get_tipo() === 'c' || temp.get_tipo() === 'C'){
       // C a F
