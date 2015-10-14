@@ -4,48 +4,40 @@ describe("Test BDD para el Conversor de Temperatura", function() {
 
   var fin = document.getElementById("resultado");
 
-  it("Debería ser: 32e4F", function() {
-    var temp = new Temperatura(32e4,"F");
-    expect(temp.get_valor()).to.equal(32e4);
+  it("Resultado esperado: 45e2F", function() {
+    var temp = new Temperatura(45e2,"F");
+    expect(temp.get_valor()).to.equal(45e2);
     expect(temp.get_tipo()).to.equal("F");
   });
 
-  it("Debería ser: -4.3e-2C", function() {
-    var temp = new Temperatura(-4.3e-2,"C");
-    expect(temp.get_valor()).to.equal(-4.3e-2);
+  it("Resultado esperado: -2e-2C", function() {
+    var temp = new Temperatura(-5e-2,"C");
+    expect(temp.get_valor()).to.equal(-5e-2);
     expect(temp.get_tipo()).to.equal("C");
   });
 
-  it("Debería ser: 3.2e4F", function() {
+  it("Resultado esperado: 10.1e10F", function() {
     var temp = new Temperatura(0,"C");
-    temp.set_valor(3.2e4);
+    temp.set_valor(10.1e10);
     temp.set_tipo("F");
-    expect(temp.get_valor()).to.equal(3.2e4);
+    expect(temp.get_valor()).to.equal(10.1e10);
     expect(temp.get_tipo()).to.equal("F");
   });
 
-  it("0.032C === 32.0576F", function() {
+  it("12.35C === 54.23F", function() {
     var temp = new Temperatura();
-    temp.set_valor(0.032);
+    temp.set_valor(12.35);
     temp.set_tipo("C");
     var res = temp.to_f();
-    expect(res).to.equal(32.0576);
+    expect(res).to.equal(54.23);
   });
 
-  it("32,0576F === 0.032C", function() {
+  it("32F === 0C", function() {
     var temp = new Temperatura();
-    temp.set_valor(32.0576);
+    temp.set_valor(32);
     temp.set_tipo("F");
     var res = temp.to_c();
-    expect(res).to.equal(0.032000000000000424);
-  });
-
-  it("mostrar_final()", function() {
-    window.onload = function() {
-      var temp = new Temperatura(5,0,"F");
-      temp.mostrar_final();
-      expect(fin.innerHTML).to.equal("El resultado es: 5 F");
-    }
+    expect(res).to.equal(0);
   });
 
   it("5X === ERROR", function() {
@@ -56,12 +48,12 @@ describe("Test BDD para el Conversor de Temperatura", function() {
     }
   });
 
-  it("32,0576F === 0.032C", function() {
+  it("32.0576F === 0.032C", function() {
     window.onload = function() {
-      var temp = new Temperatura(-2.3,0,"C");
+      var temp = new Temperatura(5,0,"C");
       var res = "El resultado es: " + temp.get_valor() + " " + temp.get_tipo();
       document.getElementById("resultado").innerHTML = res;
-      expect(fin.innerHTML).to.equal("El resultado es: -2.3 C");
+      expect(fin.innerHTML).to.equal("El resultado es: 5 C");
     }
   });
 });
