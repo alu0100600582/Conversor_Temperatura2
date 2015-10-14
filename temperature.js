@@ -1,4 +1,42 @@
-function calculate() {
+"use strict"; 
+
+function Medida (valor, tipo) {
+  this.valor_ = valor;
+  this.tipo_ = tipo;
+}
+
+function Temperatura (valor, tipo) {
+  this.base = Medida;
+  this.base(valor, tipo);
+}
+
+var temp = new Temperatura(4,"F");
+
+alert("Valor: " + temp.valor_ + "\nTipo: " + temp.tipo_);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function calculate() {
   var result;
   var temp = original.value;
   var regexp = /([-+]?\d+(?:\.\d*)?)\s*([fFcC])/;
@@ -24,3 +62,4 @@ function calculate() {
     converted.innerHTML = "ERROR! Prueba con algo como esto '-4.2C' ";
   }
 }
+*/
