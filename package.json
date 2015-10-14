@@ -1,27 +1,31 @@
 {
-  "name": "Conversor_Temperatura",
+  "name": "Conversor_Temperatura2",
   "version": "1.0.0",
-  "description": "Práctica Conversor de Temperatura",
+  "description": "Práctica Conversor de Temperatura Mejorado",
   "main": "temperature.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tests"
   },
   "devDependencies": {
-    "chai": "*",
-    "gulp": "*",
-    "gulp-concat": "^2.6.0",
-    "gulp-util": "^3.0.6",
-    "mocha": "*"
+        "chai": "*",
+        "del": "^2.0.2",
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-minify-css": "^1.2.1",
+        "gulp-minify-html": "^1.0.4",
+        "gulp-uglify": "^1.4.1",
+        "gulp-util": "^3.0.6",
+        "mocha": "*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alu0100600582/Conversor_Temperatura.git"
+    "url": "git+https://github.com/alu0100600582/Conversor_Temperatura2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alu0100600582/Conversor_Temperatura/issues"
+    "url": "https://github.com/alu0100600582/Conversor_Temperatura2/issues"
   },
-  "homepage": "https://github.com/alu0100600582/Conversor_Temperatura#readme"
+  "homepage": "https://github.com/alu0100600582/Conversor_Temperatura2#readme"
 }
