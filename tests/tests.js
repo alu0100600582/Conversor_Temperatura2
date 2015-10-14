@@ -4,12 +4,12 @@ suite('temperature', function() {
     test('32F = 0C', function() {
         original.value = "32F";
         calculate();
-        assert.deepEqual(converted.innerHTML, "0.0 Celsius");
+        assert.deepEqual(converted.innerHTML, "0 Celsius");
     });
     test('45C = 113.0 Farenheit', function() {
         original.value = "45C";
         calculate();
-        assert.deepEqual(converted.innerHTML, "113.0 Farenheit");
+        assert.deepEqual(converted.innerHTML, "113 Farenheit");
     });
 
     test('5X = error', function() {
@@ -21,7 +21,7 @@ suite('temperature', function() {
     test('-45C = -49.0 Farenheit', function() {
         original.value = "-45C";
         calculate();
-        assert.deepEqual(converted.innerHTML, "-49.0 Farenheit");
+        assert.deepEqual(converted.innerHTML, "-49 Farenheit");
     });
 
     test('converted == String', function() {
@@ -29,5 +29,5 @@ suite('temperature', function() {
        calculate();
        assert.isString(converted.innerHTML);
     });
-    
+
 });
