@@ -22,11 +22,14 @@ function Temperatura (valor, exp, tipo) {
 //Herencia
 Temperatura.prototype = new Medida();
 
-function calculate(){
 
+
+function calculate(){
+  var result;
   var ini_temp = document.getElementsByName("ini_temp")[0].value;
   var exp_regular = /(^[-+]?\d+(?:\.\d*)?)(?:[eE]?([-+]?\d+))?\s*([fFcC])/;
 
+  // comprobamos que el valor introducido haga match con la expresion regular
   var valor = ini_temp.match(exp_regular);
 
   var temp = new Temperatura(valor[1],valor[2],valor[3]);
@@ -64,11 +67,11 @@ function calculate(){
     }
 
     if(temp.get_tipo() === 'c' || temp.get_tipo() === 'C'){
-      // Pasamos de C a F
+      // C a F
       var temp_final = new Temperatura(((temp.get_valor()*9)/5)+32,1,"F");
       var result = temp_final.get_valor() + " Farenheit ";
     } else {
-      // Pasamos de F a C
+      // F a C
       var temp_final = new Temperatura(((temp.get_valor()-32)*5)/9,1,"C");
       var result = temp_final.get_valor() + " Celsius " ;
     }
@@ -79,35 +82,3 @@ function calculate(){
     converted.innerHTML = "ERROR! Prueba con algo como esto '-4.2C' ";
   }
 }
-
-
-
-
-
-/*function calculate() {
-  var result;
-  var temp = original.value;
-  var regexp = /([-+]?\d+(?:\.\d*)?)\s*([fFcC])/;
-
-
-  var m = temp.match(regexp);
-
-  if (m) {
-    var num = m[1];
-    var type = m[2];
-    num = parseFloat(num);
-    if (type == 'c' || type == 'C') {
-      result = (num * 9/5)+32;
-      result = result.toFixed(1)+" Farenheit"
-    }
-    else {
-      result = (num - 32)*5/9;
-      result = result.toFixed(1)+" Celsius"
-    }
-    converted.innerHTML = result;
-  }
-  else {
-    converted.innerHTML = "ERROR! Prueba con algo como esto '-4.2C' ";
-  }
-}
-*/
