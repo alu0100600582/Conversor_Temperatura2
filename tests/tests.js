@@ -28,7 +28,7 @@ describe("Test BDD para el Conversor de Temperatura", function() {
     var temp = new Temperatura();
     temp.set_valor(12.35);
     temp.set_tipo("C");
-    var res = temp.to_f();
+    var res = temp.convertirF();
     expect(res).to.equal(54.23);
   });
 
@@ -36,24 +36,15 @@ describe("Test BDD para el Conversor de Temperatura", function() {
     var temp = new Temperatura();
     temp.set_valor(32);
     temp.set_tipo("F");
-    var res = temp.to_c();
+    var res = temp.convertirC();
     expect(res).to.equal(0);
   });
 
   it("5X === ERROR", function() {
     window.onload = function() {
       var temp = new Temperatura(5,0,"X");
-      conversor();
+      calculate();
       expect(fin.innerHTML).to.match("/no es correcto/");
-    }
-  });
-
-  it("32.0576F === 0.032C", function() {
-    window.onload = function() {
-      var temp = new Temperatura(5,0,"C");
-      var res = "El resultado es: " + temp.get_valor() + " " + temp.get_tipo();
-      document.getElementById("resultado").innerHTML = res;
-      expect(fin.innerHTML).to.equal("El resultado es: 5 C");
     }
   });
 });
