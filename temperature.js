@@ -33,7 +33,6 @@ Temperatura.prototype.mostrar = function(){
   document.getElementById("converted").innerHTML = result;
 }
 
-
 function calculate(){
   var result = new Temperatura();
   var temp = inicial.value;
